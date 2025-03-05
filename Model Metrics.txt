@@ -1,0 +1,25 @@
+# FINAL MODEL #
+
+imblearn.pipeline.Pipeline(
+                            [
+                                ('over-sample', imblearn.over_sampling.SMOTE(sampling_strategy='minority')), 
+                                ('log reg', sklearn.linear_model.LogisticRegression())
+                            ]
+                                                                                                            )
+
+# METRICS #
+
+              precision    recall  f1-score   support
+
+           0       0.98      0.76      0.86       960
+           1       0.17      0.76      0.28        62
+
+    accuracy                           0.76      1022
+   macro avg       0.58      0.76      0.57      1022
+weighted avg       0.93      0.76      0.82      1022
+
+
+
+# SIMILAR RESULTS CAN BE ACHIEVED WITH:
+
+sklearn.linear_model.LogisticRegression(class_weight='balanced')
